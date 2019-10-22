@@ -1,0 +1,23 @@
+.header {
+    grid-area: head-wrapp;
+}
+
+.logo {
+    grid-area: h-logo;
+}
+
+.logo img {
+    width: 46px;
+    height: 46px;
+    margin-left: 5%;
+}
+
+.content {
+    display: grid;
+    grid-template-rows: inherit;
+    grid-template-columns: inherit;
+    grid-template-areas: 'h-logo h-logo h-logo';
+    background-color: #4c75a3;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}

@@ -1,14 +1,15 @@
 import React from 'react';
+import styles from './styles/Content.module.css';
 
 const Content = () => {
     return(
-        <div className='content-wrapper'>
-        <div className='user-info'>
-          <div className='user-avatar'>
+        <div className={styles.wrapper}>
+        <div className={styles.userInfo}>
+          <div className={styles.userAva}>
               <img src='https://iisy.fi/wp-content/uploads/2018/08/user-profile-male-logo.jpg'
               alt='some image'/>
           </div>
-          <div className='user-name'>
+          <div className={styles.userName}>
             <span>Jack Wilson</span>
           </div>
         </div>
