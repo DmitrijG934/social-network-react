@@ -8,10 +8,10 @@ import Footer from './components/Footer';
 const App = () => {
     return(
       <div className='app-wrapper'>
-        <Header/>     
-        <Navbar/>
-        <Content/>      
-        <Footer/>
+        <Header/>
+        <Navbar />
+        <Content />
+        <Footer />
       </div>
     )
 }
