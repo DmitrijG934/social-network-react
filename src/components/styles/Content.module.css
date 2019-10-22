@@ -1,24 +1,3 @@
 .wrapper {
     grid-area: cont-wrapp;
 }
-
-.userInfo {
-    display: grid;
-    grid-template-columns: 1fr 10fr 2fr;
-    grid-template: 'u-ava u-username';
-}
-
-.userAva {
-    grid-area: u-ava;
-    grid-template-columns: 20px 1fr;
-}
-
-
-.userAva img {
-    width: 70px;
-    height: 70px;
-}
-
-.userName {
-    grid-area: u-username;
-}
