@@ -10,9 +10,9 @@ const Content = () => {
         <UserInfo username='Jack Wilson'/> 
         <Textarea/>
         <div className='posts-container'>
-          <Post number={1}/>
-          <Post number={2}/>
-          <Post number={3}/>
+          <Post number={1} likes={1}/>
+          <Post number={2} likes={25}/>
+          <Post number={3} likes={230}/>
         </div>      
       </div>
     )

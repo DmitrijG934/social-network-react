@@ -1,7 +1,7 @@
 .textareaWrapper textarea {
     width: 100%;
-    resize: none;
     box-sizing: border-box;
+    resize: none;
     border: 2px solid #ccc;
     border-radius: 4px;
     background-color: #f8f8f8;

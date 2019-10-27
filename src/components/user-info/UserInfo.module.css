@@ -12,6 +12,7 @@
 
 .userAva img {
     width: 70px;
+    border-radius: 50%;
     height: 70px;
 }
 

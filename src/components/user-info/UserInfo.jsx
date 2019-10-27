@@ -5,7 +5,7 @@ const UserInfo = (props) => {
     return(
         <div className={styles.userInfo}>
             <div className={styles.userAva}>
-                <img src='https://iisy.fi/wp-content/uploads/2018/08/user-profile-male-logo.jpg'
+                <img src='https://sun9-8.userapi.com/c858416/v858416962/bcc6f/TS34rr12qwQ.jpg?ava=1'
                 alt='some image'/>
             </div>
             <div className={styles.userName}>
