@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles/UserInfo.module.css';
+import styles from './UserInfo.module.css';
 
 const UserInfo = (props) => {
     return(
