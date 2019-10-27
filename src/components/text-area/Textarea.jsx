@@ -5,7 +5,7 @@ const Textarea = () => {
     return(
         <div className={styles.textareaWrapper}>
             <span className={styles.newPostCaption}>Add new post: </span>
-            <textarea></textarea>
+            <textarea/>
             <button>Add post</button>
         </div>
     )
