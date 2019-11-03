@@ -1,5 +1,8 @@
 .header {
     grid-area: head-wrapp;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .logo {
@@ -14,8 +17,6 @@
 
 .content {
     display: grid;
-    grid-template-rows: inherit;
-    grid-template-columns: inherit;
     grid-template-areas: 'h-logo h-logo h-logo';
     background-color: #4c75a3;
     border-bottom-left-radius: 15px;

@@ -1,18 +1,46 @@
 .navbar {
     grid-area: nav-wrapp;
+    text-align: center;
 }
 
 .link {
+    display: grid;
+    grid-template-areas: "icon caption";
+    grid-template-columns: 15% 1fr;
     text-decoration: none;
     font-size: 22px;
     padding: 5px;
+    border-radius: 6px;
+}
+
+.iconEl {
+    grid-area: icon;
+    align-items: center;
+}
+
+.captionEl {
+    grid-area: caption;
+}
+
+.link img {
+    width: 32px;
+    height: 32px;
 }
 
 .link a {
+    font-size: 18px;
+    font-family: -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Geneva,Noto Sans Armenian,
+    Noto Sans Bengali,Noto Sans Cherokee,Noto Sans Devanagari,Noto Sans Ethiopic,Noto Sans Georgian,Noto Sans Hebrew,
+    Noto Sans Kannada,
+    Noto Sans Khmer,Noto Sans Lao,Noto Sans Osmanya,Noto Sans Tamil,Noto Sans Telugu,Noto Sans Thai,sans-serif;
+    color: #2a5885;
     text-decoration: none;
 }
 
 .link a.activeLink {
-    padding: 10px;
     color: black;
+}
+
+.link:hover {
+    background: #b0becc;
 }

@@ -1,19 +1,19 @@
 .userInfo {
     display: grid;
-    grid-template-columns: 1fr 10fr 2fr;
-    grid-template: 'u-ava u-username';
+    grid-template-columns: 1fr 2fr;
+    grid-template: 'u-ava u-username u-username';
+    grid-gap: 10px;
+    margin-bottom: 10px;
 }
 
 .userAva {
     grid-area: u-ava;
-    grid-template-columns: 20px 1fr;
 }
 
-
 .userAva img {
-    width: 70px;
-    border-radius: 50%;
-    height: 70px;
+    width: 200px;
+    border-radius: 5px;
+    height: 200px;
 }
 
 .userName {
