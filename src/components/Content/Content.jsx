@@ -23,7 +23,7 @@ export default class Content extends React.Component {
         return (
             <div className={styles.mainContentWrapper}>
                 <UserInfo username='Jack Wilson'/>
-                <TextArea/>
+                <TextArea />
                 <div className='posts-container'>
                     {this.state.posts.map((post, index) => <Post key={index}
                                                                  onDelete={this.deletePost.bind(this, index)}
