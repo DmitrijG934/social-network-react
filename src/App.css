@@ -1,11 +1,8 @@
 .app-wrapper {
     display: grid;
-    grid-template-areas: 
-    'head-wrapp head-wrapp head-wrapp'
-    'nav-wrapp cont-wrapp cont-wrapp'
-    'footer-wrapp footer-wrapp footer-wrapp';
-    grid-template-rows: inherit 1fr;
-    grid-template-columns: 2fr 10px;
+    grid-template-areas: 'head-wrapp head-wrapp head-wrapp' 'nav-wrapp cont-wrapp cont-wrapp' 'footer-wrapp footer-wrapp footer-wrapp';
+    grid-template-columns: 15% 1fr;
+    grid-template-rows: 42px 1fr;
     grid-gap: 10px;
 }
 
