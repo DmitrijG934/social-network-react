@@ -1,0 +1,16 @@
+.dialogItem {
+    background: #f8f8f8;
+    border-radius: 5%;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+.nameCaption {
+    text-decoration: none;
+}
+
+.activeLink {
+    color: black;
+    padding: 10px;
+}

@@ -11,3 +11,8 @@
 .link a {
     text-decoration: none;
 }
+
+.link a.activeLink {
+    padding: 10px;
+    color: black;
+}

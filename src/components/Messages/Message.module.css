@@ -1,0 +1,22 @@
+.messagesWrapper {
+    background: #f8f8f8;
+    border-radius: 5%;
+    padding: 10px;
+    margin: 10px;
+}
+
+.messageInfo {
+    font-style: oblique;
+}
+
+.authorInfoSpan {
+    text-decoration: underline;
+}
+
+.dateInfoSpan {
+    margin-left: 8px;
+    font-size: small;
+}
+
+.messageSpan {
+}
