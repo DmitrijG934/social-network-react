@@ -3,12 +3,12 @@ import styles from './Content.module.css';
 import Post from '../Post/Post';
 import UserInfo from '../UserInfo/UserInfo';
 import TextArea from '../TextArea/TextArea';
-import {getRandomLikesNumber} from "../../data/utils";
-import data_array from "../../data/data_array";
+import {getRandomLikesNumber} from "../../utils/utils";
+import {posts} from "../../redux/state";
 
 export default class Content extends React.Component {
     state = {
-        posts: [...data_array.posts]
+        posts: [...posts]
     };
 
     deletePost(index) {
