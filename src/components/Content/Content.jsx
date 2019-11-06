@@ -12,6 +12,8 @@ const Content = (props) => {
             <TextArea createPost={props.createPost}/>
             <div className='posts-container'>
                 {props.posts.map((post, index) => <Post key={index}
+                                                             index={index}
+                                                             removePost={props.removePost}
                                                              likes={getRandomLikesNumber(150)}
                                                              content={post.content}
                                                              number={++index}/>)}

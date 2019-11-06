@@ -8,6 +8,12 @@ export const createPost = (message) => {
     rerenderEntireTree(state);
 };
 
+export const deletePost = (messageIndex) => {
+    console.log('received request to delete post with index: ' + messageIndex);
+    state.posts.splice(messageIndex, 1);
+    rerenderEntireTree(state);
+};
+
 export const state = {
     posts: [
         {
