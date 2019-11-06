@@ -19,7 +19,7 @@ export default class Post extends React.Component {
     }
 
     removePost() {
-        return this.props.onDelete();
+        this.props.removePost(this.props.index);
     }
 
     render() {
@@ -34,9 +34,9 @@ export default class Post extends React.Component {
                                 onClick={this.collapsePostBody.bind(this)}>
                             Collapse post
                         </button>
-                        <button className="btn btn-danger ml-2 mt-2 mb-2" type="button"
-                                onClick={this.removePost.bind(this)}>X
-                        </button>
+                        <button
+                            onClick={this.removePost.bind(this)}
+                            className="btn btn-danger ml-2 mt-2 mb-2" type="button">X</button>
                     </div>
                     :
                     <button className="btn btn-primary mt-2" type="button" onClick={this.expandPostBody.bind(this)}>
