@@ -1,3 +1,13 @@
+import {rerenderEntireTree} from "../render/render";
+
+export const createPost = (message) => {
+    console.log('received new post: ' + message);
+    state.posts.push({
+        content: message
+    });
+    rerenderEntireTree(state);
+};
+
 export const state = {
     posts: [
         {

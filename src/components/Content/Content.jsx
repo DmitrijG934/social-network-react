@@ -9,7 +9,7 @@ const Content = (props) => {
     return (
         <div className={styles.mainContentWrapper}>
             <UserInfo username='Jack Wilson'/>
-            <TextArea/>
+            <TextArea createPost={props.createPost}/>
             <div className='posts-container'>
                 {props.posts.map((post, index) => <Post key={index}
                                                              likes={getRandomLikesNumber(150)}
