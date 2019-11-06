@@ -17,6 +17,7 @@ const App = (props) => {
                            render={() => <Content posts={props.appState.posts}
                                                   createPost={props.createPost}
                                                   removePost={props.removePost}
+                                                  editPost={props.editPost}
                            />}/>
                     <Route path='/messages'
                            render={() => <Dialogs posts={props.appState.posts} users={props.appState.users}/>}/>

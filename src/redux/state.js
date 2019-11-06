@@ -14,6 +14,12 @@ export const deletePost = (messageIndex) => {
     rerenderEntireTree(state);
 };
 
+export const editPost = (message, index) => {
+    console.log('received request to update post with id: ' + index);
+    state.posts.splice(index, 1, {content: message});
+    rerenderEntireTree(state);
+};
+
 export const state = {
     posts: [
         {

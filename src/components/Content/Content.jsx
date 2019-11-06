@@ -9,11 +9,12 @@ const Content = (props) => {
     return (
         <div className={styles.mainContentWrapper}>
             <UserInfo username='Jack Wilson'/>
-            <TextArea createPost={props.createPost}/>
+            <TextArea createPost={props.createPost} operationType={'Add'}/>
             <div className='posts-container'>
                 {props.posts.map((post, index) => <Post key={index}
                                                              index={index}
                                                              removePost={props.removePost}
+                                                             editPost={props.editPost}
                                                              likes={getRandomLikesNumber(150)}
                                                              content={post.content}
                                                              number={++index}/>)}
