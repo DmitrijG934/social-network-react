@@ -1,4 +1,5 @@
-export const posts = [
+export const state = {
+    posts: [
         {
             content: 'Parinda (Bird) is an Indian crime drama film produced and directed by Vidhu Vinod Chopra (pictured), and released on 3 November 1989. In the film, Kishan (Jackie Shroff), who works for the underworld don Anna Seth (Nana Patekar),' +
                 ' faces off against his brother Karan (Anil Kapoor) ' +
@@ -15,9 +16,8 @@ export const posts = [
                 ' Chopra remade Parinda as a Hollywood film titled Broken Horses starring Vincent D\'Onofrio, ' +
                 'Anton Yelchin and Chris Marquette.'
         },
-    ];
-
-export const users = [
+    ],
+    users: [
         {
             'username': 'Jack Wilson',
             'img': 'https://sun9-58.userapi.com/c858216/v858216987/7e95d/dmInZh7oNLw.jpg?ava=1',
@@ -60,4 +60,5 @@ export const users = [
                 'Hello, world!', 'How are you?', 'It\'s should be cool!'
             ]
         },
-    ];
+    ]
+};
