@@ -12,6 +12,9 @@ const Content = (props) => {
             <TextArea createPost={props.createPost} operationType={'Add'}/>
             <div className='posts-container'>
                 {props.posts.map((post, index) => <Post key={index}
+                                                             creationDate={new Date().toLocaleDateString() + ' ' + new Date()
+                                                                 .toTimeString()
+                                                                 .replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1")}
                                                              index={index}
                                                              removePost={props.removePost}
                                                              editPost={props.editPost}

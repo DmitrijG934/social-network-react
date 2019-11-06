@@ -40,7 +40,8 @@ export default class Post extends React.Component {
     render() {
         return (
             <div>
-                <h3>Post {this.props.number}</h3>
+                <h3>Post {this.props.number} </h3>
+                <p>(Created at: <em>{this.props.creationDate})</em></p>
                 <img className={styles.icon}
                      src='https://www.freeiconspng.com/uploads/like-button-png-2.png'/>{this.props.likes}<br/>
                 {this.state.expandPost ?
