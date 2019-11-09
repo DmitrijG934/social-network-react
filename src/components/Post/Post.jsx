@@ -72,6 +72,7 @@ export default class Post extends React.Component {
                         :
                         <TextArea operationType={'Update'} editPost={this.props.editPost}
                                   onEdit={this.stateToDefault.bind(this)}
+                                  post={this.props.content}
                                   postId={this.props.index}/>
                     }
                 </div>

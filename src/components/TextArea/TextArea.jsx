@@ -22,7 +22,9 @@ const TextArea = (props) => {
     return (
         <div className={styles.textareaWrapper}>
             <span className={styles.newPostCaption}>{props.operationType} post: </span>
-            <textarea ref={textAreaReference} className={'input-group mt-1 mb-3'}/>
+            <textarea ref={textAreaReference} className={'input-group mt-1 mb-3'}
+                      defaultValue={props.operationType === 'Update' ? props.post : ''}
+            />
             {props.operationType === 'Add' ?
                 <button onClick={createNewPost} className="btn btn-primary">Add post</button>
                 :
