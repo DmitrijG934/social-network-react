@@ -1,4 +1,6 @@
-import {rerenderEntireTree} from "../render/render";
+let rerenderEntireTree = () => {
+    console.log('State was changed.');
+};
 
 export const createPost = (message) => {
     console.log('received new post: ' + message);
@@ -18,6 +20,10 @@ export const editPost = (message, index) => {
     console.log('received request to update post with id: ' + index);
     state.posts.splice(index, 1, {content: message});
     rerenderEntireTree(state);
+};
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
 };
 
 export const state = {

@@ -24,15 +24,15 @@ export default class Post extends React.Component {
         this.props.removePost(this.props.index);
     }
 
-    editPost() {
+    onEditPost() {
         this.setState({
             onEdit: true
         })
     }
 
-    stateToDefault() {
+    resetState() {
         this.setState({
-            expandPost: false,
+            expandPost: true,
             onEdit: false
         });
     }
@@ -52,7 +52,7 @@ export default class Post extends React.Component {
                             Collapse post
                         </button>
                             <button className="btn btn-primary mt-2 mb-2 ml-2" type="button"
-                                    onClick={this.editPost.bind(this)}>Edit post</button>
+                                    onClick={this.onEditPost.bind(this)}>Edit post</button>
                         <button
                             onClick={this.removePost.bind(this)}
                             className="btn btn-danger ml-2 mt-2 mb-2 ml-2" type="button">X
@@ -71,7 +71,8 @@ export default class Post extends React.Component {
                     {!this.state.onEdit ? <div className="card card-body">{this.props.content}</div>
                         :
                         <TextArea operationType={'Update'} editPost={this.props.editPost}
-                                  onEdit={this.stateToDefault.bind(this)}
+                                  onEdit={this.resetState.bind(this)}
+                                  onClose={this.resetState.bind(this)}
                                   post={this.props.content}
                                   postId={this.props.index}/>
                     }
