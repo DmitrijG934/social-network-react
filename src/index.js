@@ -7,11 +7,8 @@ import React from "react";
 
 let renderDocument = (state) => {
     ReactDOM.render(
-        <App appState={state}
-             createPost={store.createPost.bind(store)}
-             removePost={store.deletePost.bind(store)}
-             editPost={store.updatePost.bind(store)}
-        />, document.getElementById('root')
+        <App appState={state} dispatch={store.dispatch.bind(store)}/>,
+        document.getElementById('root')
     )
 };
 

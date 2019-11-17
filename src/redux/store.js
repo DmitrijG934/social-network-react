@@ -1,3 +1,5 @@
+import {CREATE_POST, DELETE_POST, UPDATE_POST} from "./actions_types";
+
 let store = {
     _state: {
         posts: [
@@ -69,25 +71,32 @@ let store = {
     _callSubscriber() {
         console.log('State was changed.');
     },
-    createPost(message) {
-        console.log('received new post: ' + message);
-        this._state.posts.push({
-            content: message
-        });
-        this._callSubscriber(this._state);
-    },
-    deletePost(index) {
-        console.log('received request to delete post with index: ' + index);
-        this._state.posts.splice(index, 1);
-        this._callSubscriber(this._state);
-    },
-    updatePost(message, index) {
-        console.log('received request to update post with id: ' + index);
-        this._state.posts.splice(index, 1, {content: message});
-        this._callSubscriber(this._state);
-    },
     subscribe(observer) {
         this._callSubscriber = observer;
+    },
+    dispatch(action) {
+        switch (action.type) {
+            case CREATE_POST:
+                console.log('received new post: ' + action.payload.message);
+                this._state.posts.push({
+                    content: action.payload.message
+                });
+                this._callSubscriber(this._state);
+                break;
+            case UPDATE_POST:
+                console.log('received request to update post with id: ' + action.payload.index);
+                this._state.posts.splice(action.payload.index, 1,
+                    {content: action.payload.message});
+                this._callSubscriber(this._state);
+                break;
+            case DELETE_POST:
+                console.log('received request to delete post with index: ' + action.payload.index);
+                this._state.posts.splice(action.payload.index, 1);
+                this._callSubscriber(this._state);
+                break;
+            default:
+                break;
+        }
     }
 };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Post.module.css';
 import TextArea from "../TextArea/TextArea";
+import {DELETE_POST} from "../../redux/actions_types";
 
 export default class Post extends React.Component {
     state = {
@@ -21,7 +22,12 @@ export default class Post extends React.Component {
     }
 
     removePost() {
-        this.props.removePost(this.props.index);
+        this.props.dispatch({
+            type: DELETE_POST,
+            payload: {
+                index: this.props.index
+            }
+        });
     }
 
     onEditPost() {
@@ -70,7 +76,7 @@ export default class Post extends React.Component {
                 <div>
                     {!this.state.onEdit ? <div className="card card-body">{this.props.content}</div>
                         :
-                        <TextArea operationType={'Update'} editPost={this.props.editPost}
+                        <TextArea operationType={'Update'} dispatch={this.props.dispatch}
                                   onEdit={this.resetState.bind(this)}
                                   onClose={this.resetState.bind(this)}
                                   post={this.props.content}

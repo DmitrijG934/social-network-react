@@ -1,16 +1,28 @@
 import React from 'react';
 import styles from './Textarea.module.css';
+import {CREATE_POST, UPDATE_POST} from "../../redux/actions_types";
 
 const TextArea = (props) => {
     let textAreaReference = React.createRef();
 
     const createNewPost = () => {
-        props.createPost(textAreaReference.current.value);
+        props.dispatch({
+            type: CREATE_POST,
+            payload: {
+                message: textAreaReference.current.value,
+            }
+        });
         cleanForm();
     };
 
     const updatePost = () => {
-        props.editPost(textAreaReference.current.value, props.postId);
+        props.dispatch({
+            type: UPDATE_POST,
+            payload: {
+                message: textAreaReference.current.value,
+                index: props.postId
+            }
+        });
         props.onEdit();
         cleanForm();
     };
