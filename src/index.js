@@ -1,5 +1,5 @@
 import * as serviceWorker from './serviceWorker';
-import {createPost, deletePost, editPost, state, subscribe} from "./redux/state";
+import store from "./redux/store";
 import ReactDOM from "react-dom";
 import App from "./App";
 import './index.css'
@@ -8,13 +8,13 @@ import React from "react";
 let renderDocument = (state) => {
     ReactDOM.render(
         <App appState={state}
-             createPost={createPost}
-             removePost={deletePost}
-             editPost={editPost}
+             createPost={store.createPost.bind(store)}
+             removePost={store.deletePost.bind(store)}
+             editPost={store.updatePost.bind(store)}
         />, document.getElementById('root')
     )
 };
 
-renderDocument(state);
-subscribe(renderDocument);
+renderDocument(store.getState());
+store.subscribe(renderDocument);
 serviceWorker.unregister();
