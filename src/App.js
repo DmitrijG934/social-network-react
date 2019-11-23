@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import Content from './components/Content/Content';
 import {BrowserRouter, Route} from "react-router-dom";
 import Dialogs from "./components/Dialogs/Dialogs";
+import MessageList from "./components/Messages/MessageList";
 
 const App = (props) => {
     return (
@@ -17,8 +18,12 @@ const App = (props) => {
                            render={() => <Content posts={props.appState.posts}
                                                   dispatch={props.dispatch}
                            />}/>
-                    <Route path='/messages'
+                    <Route exact path='/messages'
                            render={() => <Dialogs posts={props.appState.posts} users={props.appState.users}/>}/>
+                    {props.appState.users.map((user, index) =>
+                        <Route key={index} exact path={`/messages/${index + 1}`}
+                               render={() => <MessageList user={user} messages={user.messages}/>}/>
+                    )}
                 </div>
             </div>
         </BrowserRouter>

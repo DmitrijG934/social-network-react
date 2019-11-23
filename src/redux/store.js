@@ -25,7 +25,7 @@ let store = {
                 'username': 'Jack Wilson',
                 'img': 'https://sun9-58.userapi.com/c858216/v858216987/7e95d/dmInZh7oNLw.jpg?ava=1',
                 'messages': [
-                    'Hello, world!', 'How are you?', 'It\'s should be cool!'
+                    'Hello, world!', 'How are you?', 'It\'s should be cool!', 'Another one.'
                 ]
             },
             {
@@ -96,6 +96,34 @@ let store = {
                 break;
             default:
                 break;
+        }
+    }
+};
+
+export const addPostActionCreator = (message) => {
+    return {
+        type: CREATE_POST,
+        payload: {
+            message: message
+        }
+    }
+};
+
+export const deletePostActionCreator = (index) => {
+    return {
+        type: DELETE_POST,
+        payload: {
+            index: index
+        }
+    }
+};
+
+export const updatePostActionCreator = (message, index) => {
+    return {
+        type: UPDATE_POST,
+        payload: {
+            message: message,
+            index: index
         }
     }
 };

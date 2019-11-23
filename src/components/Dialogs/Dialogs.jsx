@@ -1,27 +1,18 @@
 import React from 'react';
 import styles from './Dialogs.module.css';
-import DialogItem from "./DialogItem/DialogItem";
-import Message from "../Messages/Message";
+import DialogUser from "./DialogItem/DialogUser";
 
 const Dialogs = (props) => {
+    let usersFromStore = props.users;
+
     return (
         <div className={styles.dialogsContentWrapper}>
             <div>
-                {props.users
+                {usersFromStore
                     .map((user, index) =>
-                        <DialogItem
+                        <DialogUser
                             imgSrc={user.img}
                             key={index} index={index} username={user.username}/>)}
-            </div>
-            <div>
-                {props.users
-                    .map(userData =>
-                        userData.messages.map((message, index) =>
-                            <Message key={index} author={userData.username}
-                                     message={message}
-                                     creationDate={new Date().toDateString()}
-                            />
-                        ))}
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Post.module.css';
 import TextArea from "../TextArea/TextArea";
-import {DELETE_POST} from "../../redux/actions_types";
+import {deletePostActionCreator} from "../../redux/store";
 
 export default class Post extends React.Component {
     state = {
@@ -22,12 +22,7 @@ export default class Post extends React.Component {
     }
 
     removePost() {
-        this.props.dispatch({
-            type: DELETE_POST,
-            payload: {
-                index: this.props.index
-            }
-        });
+        this.props.dispatch(deletePostActionCreator(this.props.index));
     }
 
     onEditPost() {
@@ -61,8 +56,7 @@ export default class Post extends React.Component {
                                     onClick={this.onEditPost.bind(this)}>Edit post</button>
                         <button
                             onClick={this.removePost.bind(this)}
-                            className="btn btn-danger ml-2 mt-2 mb-2 ml-2" type="button">X
-                        </button>
+                            className="btn btn-danger ml-2 mt-2 mb-2 ml-2" type="button">X</button>
                         </span>
                     </div>
                     :
