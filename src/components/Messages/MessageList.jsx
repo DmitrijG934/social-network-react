@@ -14,7 +14,9 @@ export default class MessageList extends React.Component {
                     )}
                 </ul>
                 <BootstrapInput buttonCaption={'Send'}
-                                placeholder={'Enter your message...'}/>
+                                userId={this.props.userId}
+                                dispatch={this.props.dispatch}
+                                placeholder={'Enter your message'}/>
             </div>
         );
     }

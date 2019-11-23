@@ -22,7 +22,11 @@ const App = (props) => {
                            render={() => <Dialogs posts={props.appState.posts} users={props.appState.users}/>}/>
                     {props.appState.users.map((user, index) =>
                         <Route key={index} exact path={`/messages/${index + 1}`}
-                               render={() => <MessageList user={user} messages={user.messages}/>}/>
+                               render={() => <MessageList user={user}
+                                                          userId={index}
+                                                          messages={user.messages}
+                                                          dispatch={props.dispatch}
+                               />}/>
                     )}
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import {CREATE_POST, DELETE_POST, UPDATE_POST} from "./actions_types";
+import {CREATE_POST, DELETE_POST, SEND_MESSAGE, UPDATE_POST} from "./actions_types";
 
 let store = {
     _state: {
@@ -94,6 +94,14 @@ let store = {
                 this._state.posts.splice(action.payload.index, 1);
                 this._callSubscriber(this._state);
                 break;
+            case SEND_MESSAGE:
+                this._state.users.map((user, index) => {
+                    if (index === action.payload.userIndex) {
+                        this._state.users[index].messages.push(action.payload.message);
+                    }
+                });
+                this._callSubscriber(this._state);
+                break;
             default:
                 break;
         }
@@ -112,20 +120,23 @@ export const addPostActionCreator = (message) => {
 export const deletePostActionCreator = (index) => {
     return {
         type: DELETE_POST,
-        payload: {
-            index: index
-        }
+        payload: { index }
     }
 };
 
 export const updatePostActionCreator = (message, index) => {
     return {
         type: UPDATE_POST,
-        payload: {
-            message: message,
-            index: index
-        }
+        payload: { message, index }
     }
 };
+
+export const sendMessage = (message, userIndex) => {
+    return {
+        type: SEND_MESSAGE,
+        payload: {
+            message, userIndex
+        }
+    }};
 
 export default store;
