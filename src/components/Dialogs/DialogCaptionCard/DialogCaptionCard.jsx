@@ -7,7 +7,9 @@ export default class DialogCaptionCard extends React.Component {
                 <div className="card-body p-2" style={{textAlign: 'center'}}>
                     <img style={{
                         borderRadius: '50%',
-                        marginRight: '10px'
+                        marginRight: '10px',
+                        width: '42px',
+                        height: '42px'
                     }} src={this.props.userAvatar}/>
                     {this.props.username} ({this.props.isOnline})
                 </div>

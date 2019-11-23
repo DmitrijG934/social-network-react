@@ -14,7 +14,9 @@ export default class MessageList extends React.Component {
                         <li key={index} className="list-group-item"><img
                             style={{
                                 borderRadius: '50%',
-                                marginRight: '10px'
+                                marginRight: '10px',
+                                width: '32px',
+                                height: '32px',
                             }}
                             src={this.props.user.img} alt=""/>{message} (<em>{new Date().toLocaleDateString()}</em>)
                         </li>
