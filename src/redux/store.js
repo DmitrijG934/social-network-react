@@ -120,14 +120,14 @@ export const addPostActionCreator = (message) => {
 export const deletePostActionCreator = (index) => {
     return {
         type: DELETE_POST,
-        payload: { index }
+        payload: {index}
     }
 };
 
 export const updatePostActionCreator = (message, index) => {
     return {
         type: UPDATE_POST,
-        payload: { message, index }
+        payload: {message, index}
     }
 };
 
@@ -137,6 +137,7 @@ export const sendMessage = (message, userIndex) => {
         payload: {
             message, userIndex
         }
-    }};
+    }
+};
 
 export default store;

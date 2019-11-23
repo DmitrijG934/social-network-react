@@ -4,17 +4,22 @@ import {NavLink} from "react-router-dom";
 
 const DialogUser = (props) => {
     return (
-        <div className={styles.dialogItem}>
-            <div className={styles.profileImg}>
-                <img src={props.imgSrc} alt=""/>
-            </div>
+        <ul className="list-group mt-2">
+            <li className="list-group-item">
+                    <img style={{
+                        width: '38px',
+                        borderRadius: '50%',
+                        height: '38px',
+                        marginRight: '10px'
+                    }} src={props.imgSrc} alt=""/>
                 <NavLink
                     to={`/messages/${props.index + 1}`}
                     activeClassName={styles.activeLink}
                     className={styles.nameCaption}>
-                  {props.username}
+                    {props.username}
                 </NavLink>
-        </div>
+            </li>
+        </ul>
     )
 };
 
