@@ -1,6 +1,10 @@
 import {CREATE_POST, DELETE_POST, SEND_MESSAGE, UPDATE_POST} from "./actions";
+import nativeStore from "./native-store";
 
-export const profileReducer = (state, action) => {
+let profileInitState = nativeStore.getState().posts;
+let dialogInitState = nativeStore.getState().users;
+
+export const profileReducer = (state = profileInitState, action) => {
     switch (action.type) {
         case CREATE_POST:
             console.log('received new post: ' + action.payload.message);
@@ -23,7 +27,7 @@ export const profileReducer = (state, action) => {
     return state;
 };
 
-export const dialogsReducer = (state, action) => {
+export const dialogsReducer = (state = dialogInitState, action) => {
     switch (action.type) {
         case SEND_MESSAGE:
             state.map((user, index) => {

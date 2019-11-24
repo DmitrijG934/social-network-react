@@ -13,5 +13,7 @@ let renderDocument = (state) => {
 };
 
 renderDocument(store.getState());
-store.subscribe(renderDocument);
+store.subscribe(() => {
+    renderDocument(store.getState());
+});
 serviceWorker.unregister();

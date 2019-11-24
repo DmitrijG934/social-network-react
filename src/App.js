@@ -15,12 +15,12 @@ const App = (props) => {
                 <Navbar/>
                 <div className="app-content-wrapper">
                     <Route path='/profile'
-                           render={() => <Content posts={props.appState.posts}
+                           render={() => <Content posts={props.appState.postState}
                                                   dispatch={props.dispatch}
                            />}/>
                     <Route exact path='/messages'
-                           render={() => <Dialogs posts={props.appState.posts} users={props.appState.users}/>}/>
-                    {props.appState.users.map((user, index) =>
+                           render={() => <Dialogs posts={props.appState.postState} users={props.appState.dialogState}/>}/>
+                    {props.appState.dialogState.map((user, index) =>
                         <Route key={index} exact path={`/messages/${index + 1}`}
                                render={() => <MessageList user={user}
                                                           userId={index}
