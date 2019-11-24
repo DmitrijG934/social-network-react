@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Post.module.css';
 import TextArea from "../TextArea/TextArea";
-import {deletePostActionCreator} from "../../redux/store";
+import {deletePostActionCreator} from "../../redux/actions";
 
 export default class Post extends React.Component {
     state = {

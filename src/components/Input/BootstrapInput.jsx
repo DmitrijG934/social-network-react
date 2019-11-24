@@ -1,6 +1,5 @@
 import React from 'react';
-import {sendMessage} from "../../redux/store";
-
+import {sendMessageActionCreator} from "../../redux/actions";
 
 export default class BootstrapInput extends React.Component {
     ref = React.createRef();
@@ -10,7 +9,7 @@ export default class BootstrapInput extends React.Component {
     };
 
     handleOnMessageSendEvent() {
-        this.props.dispatch(sendMessage(this.state.message, this.props.userId));
+        this.props.dispatch(sendMessageActionCreator(this.state.message, this.props.userId));
         this.ref.current.value = '';
     }
 
