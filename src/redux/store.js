@@ -1,4 +1,5 @@
-import {CREATE_POST, DELETE_POST, SEND_MESSAGE, UPDATE_POST} from "./actions_types";
+import {CREATE_POST, DELETE_POST, SEND_MESSAGE, UPDATE_POST} from "./actions";
+import {dialogsReducer, profileReducer} from "./reducers";
 
 let store = {
     _state: {
@@ -75,36 +76,9 @@ let store = {
         this._callSubscriber = observer;
     },
     dispatch(action) {
-        switch (action.type) {
-            case CREATE_POST:
-                console.log('received new post: ' + action.payload.message);
-                this._state.posts.push({
-                    content: action.payload.message
-                });
-                this._callSubscriber(this._state);
-                break;
-            case UPDATE_POST:
-                console.log('received request to update post with id: ' + action.payload.index);
-                this._state.posts.splice(action.payload.index, 1,
-                    {content: action.payload.message});
-                this._callSubscriber(this._state);
-                break;
-            case DELETE_POST:
-                console.log('received request to delete post with index: ' + action.payload.index);
-                this._state.posts.splice(action.payload.index, 1);
-                this._callSubscriber(this._state);
-                break;
-            case SEND_MESSAGE:
-                this._state.users.map((user, index) => {
-                    if (index === action.payload.userIndex) {
-                        this._state.users[index].messages.push(action.payload.message);
-                    }
-                });
-                this._callSubscriber(this._state);
-                break;
-            default:
-                break;
-        }
+        this._state.posts = profileReducer(this._state.posts, action);
+        this._state.users = dialogsReducer(this._state.users, action);
+        this._callSubscriber(this._state);
     }
 };
 
