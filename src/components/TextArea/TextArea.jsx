@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Textarea.module.css';
-import {addPostActionCreator, updatePostActionCreator} from "../../redux/store";
+import {addPostActionCreator, updatePostActionCreator} from "../../redux/actions";
 
 const TextArea = (props) => {
     let textAreaReference = React.createRef();

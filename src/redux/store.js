@@ -1,4 +1,3 @@
-import {CREATE_POST, DELETE_POST, SEND_MESSAGE, UPDATE_POST} from "./actions";
 import {dialogsReducer, profileReducer} from "./reducers";
 
 let store = {
@@ -79,38 +78,6 @@ let store = {
         this._state.posts = profileReducer(this._state.posts, action);
         this._state.users = dialogsReducer(this._state.users, action);
         this._callSubscriber(this._state);
-    }
-};
-
-export const addPostActionCreator = (message) => {
-    return {
-        type: CREATE_POST,
-        payload: {
-            message: message
-        }
-    }
-};
-
-export const deletePostActionCreator = (index) => {
-    return {
-        type: DELETE_POST,
-        payload: {index}
-    }
-};
-
-export const updatePostActionCreator = (message, index) => {
-    return {
-        type: UPDATE_POST,
-        payload: {message, index}
-    }
-};
-
-export const sendMessage = (message, userIndex) => {
-    return {
-        type: SEND_MESSAGE,
-        payload: {
-            message, userIndex
-        }
     }
 };
 
